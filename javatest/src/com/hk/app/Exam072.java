@@ -10,13 +10,16 @@ public class Exam072 {
 	
 	 public static void main(String[] args) throws IOException {
 
-	        String path = System.getProperty("user.dir") + "\\src\\text\\test072.txt";
-	        System.out.println("Working Directory = " + path);
-	        Charset encoding = Charset.defaultCharset();
+		 String path = System.getProperty("user.dir") + "\\src\\test.txt";
+	        
+		 System.out.println("Working Directory = " + path);
+		 
+		 Charset encoding = Charset.defaultCharset();
 
-	        byte[] encoded = Files.readAllBytes(Paths.get(path));
-	        String lines = new String(encoded, encoding);
-	        System.out.println(lines);
-	    }
+		 List<String> lines = Files.readAllLines(Paths.get(path), encoding);
+		
+		 System.out.println(lines);   
+	     
+	 }
 
 }
