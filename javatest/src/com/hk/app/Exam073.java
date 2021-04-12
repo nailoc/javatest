@@ -7,7 +7,7 @@ public class Exam073 {
 	
 	public static void main(String[] args) {
 
-        String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        String path = System.getProperty("user.dir") + "\\src\\text\\test073.txt";
         String text = "Added text";
 
         try {

@@ -10,7 +10,7 @@ public class Exam072 {
 	
 	 public static void main(String[] args) throws IOException {
 
-		 String path = System.getProperty("user.dir") + "\\src\\test.txt";
+		 String path = System.getProperty("user.dir") + "\\src\\text\test072.txt";
 	        
 		 System.out.println("Working Directory = " + path);
 		 
