@@ -1,43 +1,44 @@
 package com.hk.app;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Exam080 {
 	
 	public static void main(String[] args) {
 
-	    // create a map and store elements to it
-	    LinkedHashMap capitals = new LinkedHashMap<>();
-	    capitals.put("Nepal", "Kathmandu");
-	    capitals.put("India", "New Delhi");
-	    capitals.put("United States", "Washington");
-	    capitals.put("England", "London");
-	    capitals.put("Australia", "Canberra");
+		Map<String, Integer> testMap = new HashMap<String, Integer>();
 
-	    // call the sortMap() method to sort the map
-	    Map result = sortMap(capitals);
+		// Map에 데이터 추가
+		testMap.put( "apple", 1);
+		testMap.put( "orange", 2);
+		testMap.put( "pineapple", 4);
+		testMap.put( "strawberry", 5);
+		testMap.put( "melon", 3);
 
-	    for (Map.Entry entry : result.entrySet()) {
-	      System.out.print("Key: " + entry.getKey());
-	      System.out.println(" Value: " + entry.getValue());
-	    }
+		// Map.Entry 리스트 작성
+		List<Entry<String, Integer>> list_entries = new ArrayList<Entry<String, Integer>>(testMap.entrySet());
+
+		// 비교함수 Comparator를 사용하여 오름차순으로 정렬
+		Collections.sort(list_entries, new Comparator<Entry<String, Integer>>() {
+			// compare로 값을 비교
+			public int compare(Entry<String, Integer> obj1, Entry<String, Integer> obj2) {
+				// 오름 차순 정렬
+				return obj1.getValue().compareTo(obj2.getValue());
+			}
+		});
+
+		System.out.println("오름 차순 정렬");
+		// 결과 출력
+		for(Entry<String, Integer> entry : list_entries) {
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+		}
 	  }
 
-	  public static LinkedHashMap sortMap(LinkedHashMap map) {
-	    List capitalList = new LinkedList<>(map.entrySet());
-
-	    // call the sort() method of Collections
-	    Collections.sort(capitalList, (l1, l2) -> l1.getValue().compareTo(l2.getValue()));
-
-	    // create a new map
-	    LinkedHashMap result = new LinkedHashMap<>();
-
-	    // get entry from list to the map
-	    for (Map.Entry entry : capitalList) {
-	      result.put(entry.getKey(), entry.getValue());
-	    }
-
-	    return result;
-	  }
 
 }
