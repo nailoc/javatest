@@ -6,7 +6,11 @@ public class Exam068 {
 
         String path = System.getProperty("user.dir");
         
+        String path2 = "d:\\temp";
+        
         System.out.println("Working Directory = " + path);
+        
+        System.out.println("Working Directory = " + path2);
         
         for(int i=0; i<5; i++) {
         	
@@ -16,6 +20,7 @@ public class Exam068 {
         	}
         	System.out.println();
         }
+                
 
     }
 
