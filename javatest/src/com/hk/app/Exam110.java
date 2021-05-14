@@ -17,8 +17,8 @@ public class Exam110 {
 	      System.out.println("Input Stream: " + stream);
 
 	      // convert the input stream to byte array
-	      byte[] array = stream.readAllBytes();
-	      System.out.println("Byte Array: " + Arrays.toString(array));
+	      // byte[] array = stream.readAllBytes();
+	      // System.out.println("Byte Array: " + Arrays.toString(array));
 
 	      stream.close();
 	    }
